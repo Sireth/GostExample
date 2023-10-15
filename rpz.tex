@@ -1,0 +1,67 @@
+%% Преамбула TeX-файла
+
+% 1. Стиль и язык
+\documentclass{G7-32} % Стиль (по умолчанию размер шрифта 14pt)
+
+% Остальные стандартные настройки убраны в preamble.inc.tex.
+\include{preamble.inc}
+
+% Настройки листингов.
+\ifPDFTeX
+\include{listings.inc}
+\else
+\usepackage{local-minted}
+\fi
+
+% Полезные макросы листингов.
+\include{macros.inc}
+
+
+
+\begin{document}
+
+\frontmatter % выключает нумерацию ВСЕГО; здесь начинаются ненумерованные главы: реферат, введение, глоссарий, сокращения и прочее.
+
+\maketitle %создает титульную страницу
+
+
+
+
+
+%\listoffigures                         % Список рисунков
+
+%\listoftables                          % Список таблиц
+
+%\NormRefs % Нормативные ссылки 
+% Команды \breakingbeforechapters и \nonbreakingbeforechapters
+% управляют разрывом страницы перед главами.
+% По-умолчанию страница разрывается.
+
+% \nobreakingbeforechapters
+\breakingbeforechapters
+
+
+
+\tableofcontents
+
+\printnomenclature % Автоматический список сокращений
+
+
+\mainmatter % это включает нумерацию глав и секций в документе ниже
+
+\include{0.task}
+\include{1.realization}
+\include{2.results}
+
+\backmatter %% Здесь заканчивается нумерованная часть документа и начинаются ссылки и
+           
+\include{3.conclusion}
+
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

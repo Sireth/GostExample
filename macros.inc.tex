@@ -1,0 +1,12 @@
+% Любимые команды
+\newcommand{\Code}[1]{\textbf{#1}}
+
+% Стиль кода
+\usemintedstyle[cs]{bw}
+\newcommand{\inputmintedgray}[2]{%
+	\begingroup
+
+	\inputminted[fontsize=\footnotesize, breaklines, breakanywhere, breakautoindent=false, baselinestretch=1]{#1}{#2}
+
+	\endgroup
+}
