@@ -2,6 +2,15 @@
 \newcommand{\Code}[1]{\textbf{#1}}
 
 % Стиль кода
+\usepackage{etoolbox,xpatch}
+
+\makeatletter
+\AtBeginEnvironment{minted}{\dontdofcolorbox}
+\def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
+\xpatchcmd{\inputminted}{\minted@fvset}{\minted@fvset\dontdofcolorbox}{}{}
+\xpatchcmd{\mintinline}{\minted@fvset}{\minted@fvset\dontdofcolorbox}{}{} % see https://tex.stackexchange.com/a/401250/
+\makeatother
+
 \usemintedstyle[cs]{bw}
 \newcommand{\inputmintedgray}[2]{%
 	\begingroup
