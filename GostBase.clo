@@ -1,5 +1,5 @@
 \newcommand\@ptsize{}
-\newcommand\Gost@LineSpread{1.3}
+\newcommand\Gost@LineSpread{1.5}
 \ifPDFTeX
   \newcommand\Gost@fonts{times}
 \else
